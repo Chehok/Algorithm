@@ -22,16 +22,12 @@ class Solution {
         PriorityQueue<int[]> q = new PriorityQueue<>((o1, o2) -> Integer.compare(o1[1], o2[1]));
         
         for(int[] i: bookTime) {
-            if(q.size() < 1) {
-                q.add(i);
-                continue;
+            if(q.size() > 0) {
+                if(q.peek()[1] + 10 <= i[0]) {
+                    q.poll();
+                }
             }
-            if(q.peek()[1] + 10 <= i[0]) {
-                q.poll();
-                q.add(i);
-            } else {
-                q.add(i);
-            }
+            q.add(i);
         }
         
         return q.size();
