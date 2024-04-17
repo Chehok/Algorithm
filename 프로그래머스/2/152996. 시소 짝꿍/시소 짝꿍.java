@@ -12,7 +12,7 @@ class Solution {
         }
         
         // 같은 수끼리 쌍을 맺는 경우
-        for(long i: hm.values()) result += i * (i - 1) / 2;
+        for(long l: hm.values()) result += l * (l - 1) / 2;
         
         // 다른 수끼리 쌍을 맺는 경우
         newArr = new int[hm.size()];
@@ -29,9 +29,6 @@ class Solution {
                 double a = newArr[i];
                 double b = newArr[j];
                 
-                // if(a == b * 3 / 4
-                //   || a == b * 2 / 3
-                //   || a == b / 2)
                 if (a * 2.0 == b
                    || a * 3.0 / 2.0 == b
                    || a * 4.0 / 3.0 == b) {
