@@ -1,5 +1,3 @@
-import java.util.Queue;
-import java.util.LinkedList;
 class Solution {
     public String solution(String[] cards1, String[] cards2, String[] goal) {
         int i = 0, j = 0;
