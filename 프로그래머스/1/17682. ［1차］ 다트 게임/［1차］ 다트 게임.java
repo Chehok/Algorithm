@@ -7,16 +7,16 @@ class Solution {
         int sum = 0;
         
         int idx = 0;
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         for(int i = 0; i < dartResult.length(); i++) {
             char c = dartResult.charAt(i);
             
             if(0 <= c - '0' && c - '0' <= 9) {
-                temp += c;
+                temp.append(c);
             } else if(0 <= c - 'A' && c - 'A' <= 26) {
-                temp += c;
-                result[idx++][0] = temp;
-                temp = "";
+                temp.append(c);
+                result[idx++][0] = temp.toString();
+                temp = new StringBuilder();
             } else if(c == '*' || c == '#') {
                 result[idx - 1][1] = String.valueOf(c);
             } 
