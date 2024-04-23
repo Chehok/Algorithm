@@ -2,9 +2,8 @@ import java.util.ArrayList;
 
 class Solution {
     public int solution(String dartResult) {
-        int cnt = getCnt(dartResult);
-        String[][] result = new String[cnt][2];
-        int[] scoreBoard = new int[cnt];
+        String[][] result = new String[3][2];
+        int[] scoreBoard = new int[3];
         int sum = 0;
         
         int idx = 0;
@@ -23,7 +22,7 @@ class Solution {
             } 
         }
         
-        for(int i = 0; i < cnt; i++) {
+        for(int i = 0; i < 3; i++) {
             int score = Integer.valueOf(result[i][0].substring(0, result[i][0].length() -1));
             char c = result[i][0].charAt(result[i][0].length() - 1);
             
@@ -54,16 +53,6 @@ class Solution {
         }
         
         return sum;
-    }
-    
-    private int getCnt(String dartResult) {
-        int cnt = 0;
-        for(char c: dartResult.toCharArray()) {
-            if(0 <= c - 'A' && c - 'A' <= 26) {
-                cnt++;
-            }
-        }
-        return cnt;
     }
     
     private int getSquare(int num, int square) {
