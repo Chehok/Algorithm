@@ -1,23 +1,23 @@
 class Solution {
     public String solution(String s, String skip, int index) {
-        StringBuilder answer = new StringBuilder();
-        char[] sk = skip.toCharArray();
-        
-        for(char c: s.toCharArray()) {
-            char temp = c;
-            
-            for(int i = 0; i < index; i++) {
-                ++temp;
-                if(temp > 'z') temp -= 26;
-                for(int j = 0; j < sk.length; j++) {
-                    if(temp == sk[j]) {
-                        --i;
-                    }
-                }
+        boolean[] isSkip = new boolean[26];
+
+        for(int i = 0; i < skip.length(); i++) isSkip[skip.charAt(i)-'a'] = true;
+
+        char[] arr = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        StringBuilder sb = new StringBuilder();
+
+        char[] target = s.toCharArray();
+
+        for(char c : target) {
+            int cur = c - 'a';
+            for(int i = 0; i < index; i++){
+                cur = (cur+1)%26;
+                if(isSkip[cur]) i--;
             }
-            answer.append(temp);
+            sb.append(arr[cur]);
         }
-        
-        return answer.toString();
+
+        return sb.toString();
     }
 }
