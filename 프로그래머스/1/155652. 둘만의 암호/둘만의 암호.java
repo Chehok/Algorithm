@@ -1,16 +1,21 @@
 class Solution {
     public String solution(String s, String skip, int index) {
         StringBuilder answer = new StringBuilder();
-                
-        for(int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            for(int j = 0; j < index; j++) {
-                ++c;
-                if(c > 'z') c -= 26;
-                
-                if(skip.contains(c + "")) j--;
+        char[] sk = skip.toCharArray();
+        
+        for(char c: s.toCharArray()) {
+            char temp = c;
+            
+            for(int i = 0; i < index; i++) {
+                ++temp;
+                if(temp > 'z') temp -= 26;
+                for(int j = 0; j < sk.length; j++) {
+                    if(temp == sk[j]) {
+                        --i;
+                    }
+                }
             }
-            answer.append(c);
+            answer.append(temp);
         }
         
         return answer.toString();
