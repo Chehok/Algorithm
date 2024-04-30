@@ -12,6 +12,7 @@ class Solution {
                 for(int j = 0; j < sk.length; j++) {
                     if(temp == sk[j]) {
                         --i;
+                        break ;
                     }
                 }
             }
