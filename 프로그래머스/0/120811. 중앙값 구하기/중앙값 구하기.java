@@ -1,8 +1,9 @@
 class Solution {
     public int solution(int[] array) {
+        int arrLength = array.length;
         
-        for(int i = 0; i < array.length; i++) {
-            for(int j = 0; j < array.length; j++) {
+        for(int i = 0; i < arrLength; i++) {
+            for(int j = 0; j < arrLength; j++) {
                 if(array[i] < array[j]) {
                     int temp = array[i];
                     array[i] = array[j];
@@ -11,6 +12,6 @@ class Solution {
             }
         }
         
-        return array[array.length / 2];
+        return array[arrLength / 2];
     }
 }
