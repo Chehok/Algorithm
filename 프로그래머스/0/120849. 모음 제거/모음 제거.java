@@ -1,11 +1,16 @@
 class Solution {
     public String solution(String my_string) {
-        String[] aeiou = { "a", "e", "i", "o", "u" };
+        StringBuilder answer = new StringBuilder();
+        char[] aeiou = { 'a', 'e', 'i', 'o', 'u' };
         
-        for(String s: aeiou) {
-            my_string = my_string.replaceAll(s, "");
+        loop:
+        for(char c: my_string.toCharArray()) {
+            for(char temp: aeiou) {
+                if(c == temp) continue loop;
+            }
+            answer.append(c);
         }
         
-        return my_string;
+        return answer.toString();
     }
 }
