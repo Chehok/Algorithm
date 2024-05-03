@@ -4,20 +4,16 @@ class Solution {
         
         for(int i = 1; i < numLog.length; i++) {
             int a = numLog[i] - numLog[i - 1];
-            switch(a) {
-                case 1:
-                    answer.append('w');
-                    break;
-                case 10:
-                    answer.append('d');
-                    break;
-                case -1:
-                    answer.append('s');
-                    break;
-                case -10:
-                    answer.append('a');
-                    break;
-            }
+            
+            if(a == 1) {
+                answer.append('w');
+            } else if(a == 10) {
+                answer.append('d');
+            } else if(a == -1) {
+                answer.append('s');
+            } else if(a == -10) {
+                answer.append('a');
+            } 
         }
         
         return answer.toString();
