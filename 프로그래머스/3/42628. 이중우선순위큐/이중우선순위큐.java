@@ -34,7 +34,10 @@ class Solution {
             }
         }
         
-        if(!q1.isEmpty()) answer[1] = 1_000_000;
+        if(!q1.isEmpty()) {
+            answer[0] = Integer.MIN_VALUE;
+            answer[1] = Integer.MAX_VALUE;
+        }
         
         while(!q1.isEmpty()) {
             int now = q1.poll();
