@@ -14,6 +14,6 @@ class Solution {
             }
         }
         
-        return maps[m][n] % 1_000_000_007;
+        return maps[m][n] % 1_000_000_007; 
     }
 }
