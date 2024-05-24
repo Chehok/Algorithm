@@ -1,19 +1,21 @@
+import java.util.Set;
+import java.util.HashSet;
+
 class Solution {
     public int[] solution(int[] arr, int k) {
         int[] answer = new int[k];
-        int[] cnt = new int[100000];
+        Set<Integer> set = new HashSet<>();
         
         int idx = 0;
         for(int i: arr) {
             if(k <= idx) break;
-            if(cnt[i] == 0) {
+            if(set.add(i)){
                 answer[idx++] = i;
             }
-            cnt[i]++;
         }
         
         for(int i = idx; i < k; i++)
-            answer[i] = -1;
+            answer[i] = -1; 
         
         return answer;
     }
