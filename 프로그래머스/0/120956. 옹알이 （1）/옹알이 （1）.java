@@ -9,7 +9,6 @@ class Solution {
             }
         }
         
-        loop:
         for(int i = 0; i < babbling.length; i++) {
             babbling[i] = babbling[i].replaceAll("_", "");
         }
