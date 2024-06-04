@@ -10,11 +10,7 @@ class Solution {
         }
         
         for(int i = 0; i < babbling.length; i++) {
-            babbling[i] = babbling[i].replaceAll("_", "");
-        }
-        
-        for(String b: babbling) {
-            if(b.length() == 0) answer++;
+            if(babbling[i].replaceAll("_", "").length() == 0) answer++;
         }
         
         return answer;
