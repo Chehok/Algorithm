@@ -4,9 +4,8 @@ class Solution {
         
         while(n != 0) {
             answer++;
-            if(answer % 3 == 0 || String.valueOf(answer).contains("3"))
-                continue;
-            n--;
+            if(answer % 3 != 0 && !String.valueOf(answer).contains("3"))
+                n--;
         }
         
         return answer;
